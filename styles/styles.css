@@ -75,6 +75,36 @@ li a {
   text-align: center;
 }
 
-.main-images{
+.main-image{
   border-radius: 50%;
+}
+.main-images{
+  justify-content: space-around;
+}
+
+.client{
+  text-align: center;
+  gap: 50px;
+}
+
+.rating-images{
+  text-align: center;
+}
+
+/* footer-styles */
+.bg-footer{
+  background-color: bisque;
+}
+
+footer p {
+  max-width: 500px;
+}
+
+.input{
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-login{
+  display:flex ;
 }
