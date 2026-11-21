@@ -1,13 +1,154 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Discover premium cars and compare your favorites at CarZone."><title>CarZone — Find Your Drive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles/styles.css"></head><body>
-<header><nav class="nav wrap"><a class="brand" href="#top"><b>C</b> car<span>zone</span></a><div class="navlinks" id="navlinks"><a href="#top">Home</a><a href="#inventory">Explore</a><a href="#about">About</a></div><div class="navright"><button id="favorites" class="heart">♡ <small id="count">0</small></button><button class="darkbtn" id="signin">Sign in ↗</button><button class="hamb" id="hamb">☰</button></div></nav></header>
-<main id="top"><section class="hero wrap"><div class="hero-text"><small class="eyebrow">● YOUR NEXT DRIVE STARTS HERE</small><h1>Find the car<br>that feels like <em>you.</em></h1><p>Explore a curated collection of remarkable cars. From everyday comfort to dream-machine performance, your next ride is waiting.</p><div class="actions"><a class="limebtn" href="#inventory">Explore collection ↗</a><a href="#about" class="plainlink">How it works →</a></div><div class="stats"><div><b>120<span>+</span></b><small>Cars listed</small></div><div><b>35<span>+</span></b><small>Trusted brands</small></div><div><b>4.9<span>/5</span></b><small>Community rating</small></div></div></div><div class="hero-art"><img src="images/pngegg.png" alt="Sport luxury car"><div class="floatbox">✦ <div><b>Drive your dream</b><small>Premium picks, all in one place</small></div></div><small class="artlabel">CURATED FOR THE ROAD</small></div></section>
-<section class="search wrap"><input id="search" type="search" placeholder="Search make, model, or keyword…"><select id="brand"><option value="all">All brands</option></select><select id="price"><option value="all">Any price</option><option value="0-100000">Under $100k</option><option value="100000-300000">$100k–$300k</option><option value="300000-1000000">$300k–$1M</option><option value="1000000-999999999">$1M+</option></select><button class="limebtn" id="searchgo">Find cars →</button></section>
-<section class="inventory wrap" id="inventory"><div class="headingrow"><div><small class="eyebrow">THE COLLECTION</small><h2>Popular <em>cars.</em></h2><p>Browse standout rides, picked for every kind of driver.</p></div><select id="sort"><option value="featured">Featured</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option><option value="name">Name: A to Z</option></select></div><div id="chips" class="chips"></div><div id="cards" class="grid"></div><div id="empty" class="empty hidden"><h3>No cars found</h3><p>Try another search or clear filters.</p><button id="reset" class="darkbtn">Clear filters</button></div></section>
-<section class="about" id="about"><div class="wrap aboutgrid"><img src="images/DSC_5903.webp" alt="CarZone curated car selection"><div><small class="eyebrow">MORE THAN A LISTING</small><h2>A better way to find your <em>next car.</em></h2><p>We bring the details that matter into one clean place—so you can spend less time scrolling and more time imagining the road ahead.</p><ul><li><b>01</b><strong>Curated selection</strong><small>Cars worth a closer look.</small></li><li><b>02</b><strong>Clear information</strong><small>Specs and prices at a glance.</small></li><li><b>03</b><strong>Easy discovery</strong><small>Find your match, your way.</small></li></ul></div></div></section>
-<section class="reviews wrap"><div class="headingrow"><div><small class="eyebrow">GOOD WORDS, GOOD DRIVES</small><h2>Drivers <em>love us.</em></h2></div><div class="rating"><b>4.9</b><span>★★★★★<small>Rated by our community</small></span></div></div><div class="reviewgrid"><article><span>★★★★★</span><p>“The browsing experience is so straightforward. I found a few cars I never would have considered otherwise.”</p><div class="person"><img src="images/Avatar/user-1.png" alt="Customer"><div><b>Alex Morgan</b><small>Car enthusiast</small></div></div></article><article><span>★★★★★</span><p>“Clean design, useful details, and no clutter. It makes comparing cars genuinely enjoyable.”</p><div class="person"><img src="images/Avatar/user-2.png" alt="Customer"><div><b>Sam Wilson</b><small>Verified visitor</small></div></div></article><article><span>★★★★★</span><p>“A beautiful place to explore dream cars. The favorites feature makes it easy to keep my shortlist.”</p><div class="person"><img src="images/Avatar/user-3.png" alt="Customer"><div><b>Jordan Lee</b><small>Automotive fan</small></div></div></article></div></section>
-<section class="newsletter"><div class="wrap newsrow"><div><small class="eyebrow">STAY IN THE DRIVER'S SEAT</small><h2>Good cars. Fresh finds.<br><em>Delivered occasionally.</em></h2></div><form id="newsform"><input type="email" required placeholder="Enter your email address"><button class="limebtn">Subscribe ↗</button></form></div></section></main>
-<footer><div class="wrap foot"><a class="brand" href="#top"><b>C</b> car<span>zone</span></a><p>Find your drive. Make it yours.</p><div><a href="#top">Home</a><a href="#inventory">Collection</a><a href="#about">About</a></div><small>© <span id="year"></span> CarZone. Built for the love of cars.</small></div></footer>
-<div id="modal" class="modal hidden"><div class="shade" data-close></div><div class="dialog"><button class="close" data-close>×</button><div id="details"></div></div></div><div id="login" class="modal hidden"><div class="shade" data-close></div><div class="dialog login"><button class="close" data-close>×</button><small class="eyebrow">WELCOME BACK</small><h2>Sign in to <em>CarZone.</em></h2><p>Demo only—no account information is sent.</p><form id="loginform"><input type="email" required placeholder="Email"><input type="password" required placeholder="Password"><button class="limebtn">Sign in ↗</button></form></div></div><div id="toast" class="toast"></div><script src="scripts/app.js"></script></body></html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Discover premium cars and compare your favorites at CarZone.">
+    <title>CarZone — Find Your Drive</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+    <header>
+        <nav class="nav wrap"><a class="brand" href="#top"><b>C</b> car<span>zone</span></a>
+            <div class="navlinks" id="navlinks"><a href="#top">Home</a><a href="#inventory">Explore</a><a
+                    href="#about">About</a></div>
+            <div class="navright"><button id="favorites" class="heart">♡ <small id="count">0</small></button><button
+                    class="darkbtn" id="signin">Sign in ↗</button><button class="hamb" id="hamb">☰</button></div>
+        </nav>
+    </header>
+    <main id="top">
+        <section class="hero wrap">
+            <div class="hero-text"><small class="eyebrow">● YOUR NEXT DRIVE STARTS HERE</small>
+                <h1>Find the car<br>that feels like <em>you.</em></h1>
+                <p>Explore a curated collection of remarkable cars. From everyday comfort to dream-machine performance,
+                    your next ride is waiting.</p>
+                <div class="actions"><a class="limebtn" href="#inventory">Explore collection ↗</a><a href="#about"
+                        class="plainlink">How it works →</a></div>
+                <div class="stats">
+                    <div><b>120<span>+</span></b><small>Cars listed</small></div>
+                    <div><b>35<span>+</span></b><small>Trusted brands</small></div>
+                    <div><b>4.9<span>/5</span></b><small>Community rating</small></div>
+                </div>
+            </div>
+            <div class="hero-art"><img src="images/pngegg.png" alt="Sport luxury car">
+                <div class="floatbox">✦ <div><b>Drive your dream</b><small>Premium picks, all in one place</small></div>
+                </div><small class="artlabel">CURATED FOR THE ROAD</small>
+            </div>
+        </section>
+        <section class="search wrap"><input id="search" type="search"
+                placeholder="Search make, model, or keyword…"><select id="brand">
+                <option value="all">All brands</option>
+            </select><select id="price">
+                <option value="all">Any price</option>
+                <option value="0-100000">Under $100k</option>
+                <option value="100000-300000">$100k–$300k</option>
+                <option value="300000-1000000">$300k–$1M</option>
+                <option value="1000000-999999999">$1M+</option>
+            </select><button class="limebtn" id="searchgo">Find cars →</button></section>
+        <section class="inventory wrap" id="inventory">
+            <div class="headingrow">
+                <div><small class="eyebrow">THE COLLECTION</small>
+                    <h2>Popular <em>cars.</em></h2>
+                    <p>Browse standout rides, picked for every kind of driver.</p>
+                </div><select id="sort">
+                    <option value="featured">Featured</option>
+                    <option value="low">Price: low to high</option>
+                    <option value="high">Price: high to low</option>
+                    <option value="name">Name: A to Z</option>
+                </select>
+            </div>
+            <div id="chips" class="chips"></div>
+            <div id="cards" class="grid"></div>
+            <div id="empty" class="empty hidden">
+                <h3>No cars found</h3>
+                <p>Try another search or clear filters.</p><button id="reset" class="darkbtn">Clear filters</button>
+            </div>
+        </section>
+        <section class="about" id="about">
+            <div class="wrap aboutgrid"><img src="images/DSC_5903.webp" alt="CarZone curated car selection">
+                <div><small class="eyebrow">MORE THAN A LISTING</small>
+                    <h2>A better way to find your <em>next car.</em></h2>
+                    <p>We bring the details that matter into one clean place—so you can spend less time scrolling and
+                        more time imagining the road ahead.</p>
+                    <ul>
+                        <li><b>01</b><strong>Curated selection</strong><small>Cars worth a closer look.</small></li>
+                        <li><b>02</b><strong>Clear information</strong><small>Specs and prices at a glance.</small></li>
+                        <li><b>03</b><strong>Easy discovery</strong><small>Find your match, your way.</small></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="reviews wrap">
+            <div class="headingrow">
+                <div><small class="eyebrow">GOOD WORDS, GOOD DRIVES</small>
+                    <h2>Drivers <em>love us.</em></h2>
+                </div>
+                <div class="rating"><b>4.9</b><span>★★★★★<small>Rated by our community</small></span></div>
+            </div>
+            <div class="reviewgrid">
+                <article><span>★★★★★</span>
+                    <p>“The browsing experience is so straightforward. I found a few cars I never would have considered
+                        otherwise.”</p>
+                    <div class="person"><img src="images/Avatar/user-1.png" alt="Customer">
+                        <div><b>Alex Morgan</b><small>Car enthusiast</small></div>
+                    </div>
+                </article>
+                <article><span>★★★★★</span>
+                    <p>“Clean design, useful details, and no clutter. It makes comparing cars genuinely enjoyable.”</p>
+                    <div class="person"><img src="images/Avatar/user-2.png" alt="Customer">
+                        <div><b>Sam Wilson</b><small>Verified visitor</small></div>
+                    </div>
+                </article>
+                <article><span>★★★★★</span>
+                    <p>“A beautiful place to explore dream cars. The favorites feature makes it easy to keep my
+                        shortlist.”</p>
+                    <div class="person"><img src="images/Avatar/user-3.png" alt="Customer">
+                        <div><b>Jordan Lee</b><small>Automotive fan</small></div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <section class="newsletter">
+            <div class="wrap newsrow">
+                <div><small class="eyebrow">STAY IN THE DRIVER'S SEAT</small>
+                    <h2>Good cars. Fresh finds.<br><em>Delivered occasionally.</em></h2>
+                </div>
+                <form id="newsform"><input type="email" required placeholder="Enter your email address"><button
+                        class="limebtn">Subscribe ↗</button></form>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="wrap foot"><a class="brand" href="#top"><b>C</b> car<span>zone</span></a>
+            <p>Find your drive. Make it yours.</p>
+            <div><a href="#top">Home</a><a href="#inventory">Collection</a><a href="#about">About</a></div><small>©
+                <span id="year"></span> CarZone. Built for the love of cars.</small>
+        </div>
+    </footer>
+    <div id="modal" class="modal hidden">
+        <div class="shade" data-close></div>
+        <div class="dialog"><button class="close" data-close>×</button>
+            <div id="details"></div>
+        </div>
+    </div>
+    <div id="login" class="modal hidden">
+        <div class="shade" data-close></div>
+        <div class="dialog login"><button class="close" data-close>×</button><small class="eyebrow">WELCOME BACK</small>
+            <h2>Sign in to <em>CarZone.</em></h2>
+            <p>Demo only—no account information is sent.</p>
+            <form id="loginform"><input type="email" required placeholder="Email"><input type="password" required
+                    placeholder="Password"><button class="limebtn">Sign in ↗</button></form>
+        </div>
+    </div>
+    <div id="toast" class="toast"></div>
+    <script src="scripts/app.js"></script>
+</body>
+
+</html>
